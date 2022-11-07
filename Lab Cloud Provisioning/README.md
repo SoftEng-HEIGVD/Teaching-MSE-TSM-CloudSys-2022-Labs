@@ -1,6 +1,3 @@
----
-title: 'Lab: Cloud Provisioning'
----
 # Lab: Cloud Provisioning
 
 _Duration of this lab: 2 sessions_

@@ -1,3 +1,3 @@
 # TSM-CloudSys labs
 
-* [Cloud Provisioning](Lab Cloud Provisioning/)
+* [Cloud Provisioning](Lab%20Cloud%20Provisioning/)
