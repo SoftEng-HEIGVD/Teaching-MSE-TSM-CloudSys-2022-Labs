@@ -25,7 +25,7 @@ You will work together with the other students in the same AWS account, and you 
 
 We will use the following __lab naming convention:__ the name of every cloud resource starts with the group, followed by your last name. You can append more information if you want. For example when student Nicollier in Group F creates an EC2 Instance "master", he names it
 
-    GrF_Nicollier_master
+    GrF-Nicollier-master
 
 #### A note on regions
 
@@ -47,7 +47,7 @@ In this task you will explore ready-made templates developed by AWS for common s
 
 1. In the AWS Management Console navigate to CloudFormation.
 
-2. Pretend that you want to create a new stack: Click on __Create stack__.
+2. Pretend that you want to create a new stack: Click on __Create stack__, then __With new resources (standard)__.
 
     * __Prerequisite - Prepare template__: Select _Use a sample template_
     * __Select a sample template__: _Simple > LAMP stack_
@@ -76,14 +76,16 @@ In this task you will launch a simple stack and observe how CloudFormation creat
 
 Prerequisites:
 
-* You need a key pair.
+* You need a [key pair](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-key-pairs.html).
 
-1. Choose __Create stack__ and select the sample template __Simple__ > __LAMP Stack__.
+1. Choose __Create stack__, then __With new resources (standard)__ and select the sample template __Simple__ > __LAMP Stack__.
 
     On the screen __Specify stack details__ provide these values:
 
     * __Stack name__: use the lab naming convention
+    * __DBPassword__, __DBRootPassword__, __DBUser__: enter some values
     * __InstanceType__: t2.micro
+    * __KeyName__: select your EC2 key pair
     
     On the screen __Configure stack options__ provide these values:
     
@@ -163,7 +165,7 @@ In this task you will use Terraform to provision AWS cloud resources.
           tags = {
             Name = "ExampleAppServerInstance"
             Course = "TSM-CloudSys"
-            Year = "2022"
+            Year = "2023"
             Lab = "Terraform"
             Group = "F" # Put your group letter here
           }
