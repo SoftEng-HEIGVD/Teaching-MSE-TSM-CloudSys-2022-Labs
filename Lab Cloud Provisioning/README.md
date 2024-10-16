@@ -41,7 +41,7 @@ If you select another region and create a resource, you will get the error "You 
 
 In this part you will explore AWS's proprietary tool, CloudFormation, using the AWS Management Console.
 
-## Task 1.1: Explore predefined templates with the Designer
+## Task 1.1: Explore predefined templates with the Composer
 
 In this task you will explore ready-made templates developed by AWS for common scenarios and explore the graphical designer.
 
@@ -52,18 +52,20 @@ In this task you will explore ready-made templates developed by AWS for common s
     * __Prerequisite - Prepare template__: Select _Use a sample template_
     * __Select a sample template__: _Simple > LAMP stack_
     
-   To view the template in Designer click on __View in Designer__.
+    To view the template in Composer click on __View in Infrastructure Composer__.
    
-    Designer has four panes:
+    Composer has several features displayed on three panes:
     
-    * __Canvas:__ This pane is the largest and is where your template resources display as a diagram. Changes that you make here automatically modify the template's code.
+    * __Canvas__: Located on the central and largest pane, this is where your template resources display as a diagram. Changes that you make here automatically modify the template's code.
+
+    * __Template__: Next to the Canvas button, this is the editor where you can edit your entire template by using JSON or YAML code.
         
-    * __Resource types:__ This pane on the left side of the page lists all the template resources that you can add to your template, categorized by the AWS service name. Add resources to the template by dragging them from this pane to the canvas.
-        
-    * __Integrated editor:__ In the editor, you specify the details of your template, such as resource properties or template parameters, by using JSON or YAML code. When you select an item in the canvas, Designer highlights the related code in the editor. If you edit the code, you must refresh the canvas to update the diagram.
-        
-    * __Messages pane:__ This pane in the lower-right corner of Designer displays messages.
-        
+    * __List__: Located on the left side of the page, this lists all the template resources that you can add to your template, categorized by the AWS service name. Add resources to the template by dragging them from this pane to the canvas.
+
+    * __Resources__: Next to the List tab, this lists all the currently added resources to the template.
+
+    * __Resources properties__: When you select an item in the canvas and click on *Details*, Composer opens the related code in a right pane. Here you can specify the details of your template, such as resource properties or template parameters. If you edit the code, you must save to update the diagram.
+
 3. Hover over each node on the flow-of-information loop of the icons. Analyze which types of resources were used to create the necessary cloud architecture.
     
    Experiment with adding or removing resources, and analyze how the code changes. You can also look at the other templates.
