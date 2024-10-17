@@ -137,7 +137,7 @@ In this task you will use Terraform to provision AWS cloud resources.
         aws sts get-caller-identity # should display your user ID, account name and ARN
         aws ec2 describe-regions # should display all region names
    
-3. Install Terraform on your local machine by following the instructions in the Terraform documentation: [Install Terraform](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli). This lab was tested with Terraform v.1.3.3. If you run Windows it is recommended you use a Linux installation to run Terraform (Windows Subsystem for Linux with Debian/Ubuntu is fine).
+3. Install Terraform on your local machine by following the instructions in the Terraform documentation: [Install Terraform](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli). This lab was tested with Terraform v.1.9. If you run Windows it is recommended you use Windows Subsystem for Linux to run Terraform (WSL2 with Ubuntu LTS is fine).
 
     Verify that Terraform is installed correctly by running:
 
@@ -167,7 +167,7 @@ In this task you will use Terraform to provision AWS cloud resources.
           tags = {
             Name = "ExampleAppServerInstance"
             Course = "TSM-CloudSys"
-            Year = "2023"
+            Year = "2024"
             Lab = "Terraform"
             Group = "F" # Put your group letter here
           }
@@ -206,7 +206,7 @@ In this task you will use Terraform to provision AWS cloud resources.
     
         aws ec2 describe-instances
         
-9. In the Terraform configuration file modify the AMI of the instance from Ubuntu Server 20.04 LTS to 22.04 LTS (ami-08c40ec9ead489470). Use again `plan` to preview the changes and `apply` to apply them. Copy the output of `plan` to the report and explain it. How does Terraform implement the change of AMI?
+9. In the Terraform configuration file modify the AMI of the instance from Ubuntu Server 20.04 LTS to 22.04 LTS (`ami-08c40ec9ead489470`). Use again `plan` to preview the changes and `apply` to apply them. Copy the output of `plan` to the report and explain it. How does Terraform implement the change of AMI?
 
 10. Destroy the infrastructure you have created:
 
