@@ -95,7 +95,7 @@ Prerequisites:
     
     On the last screen, click on __Create change set__.
     
-2. Examine the change set and verify that it conforms to your expectations. In a second window open the EC2 console and verify that no resources have been created yet. Then click on __Execute__ and watch what happens in the EC2 console. The state of the stack should eventually become __CREATE_COMPLETE__.
+2. The status of the stack should now be __REVIEW_IN_PROGRESS__. Examine the change set and verify that it conforms to your expectations. In a second window open the EC2 console and verify that no resources have been created yet. Then click on __Execute change set__ and watch what happens in the EC2 console. The state of the stack should eventually become __CREATE_COMPLETE__.
 
    * What tags did CloudFormation add to the EC2 Instance? Which tag is used by CloudFormation to uniquely identify the resource?
    * How did CloudFormation name the Security Group and what tags did it add?
