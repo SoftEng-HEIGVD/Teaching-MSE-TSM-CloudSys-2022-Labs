@@ -41,18 +41,23 @@ If you select another region and create a resource, you will get the error "You 
 
 In this part you will explore AWS's proprietary tool, CloudFormation, using the AWS Management Console.
 
+> [!IMPORTANT]
+> Select the us-east-1 (N. Virginia) region in the top AWS console bar before  proceeding with the lab.
+
 ## Task 1.1: Explore predefined templates with the Composer
 
 In this task you will explore ready-made templates developed by AWS for common scenarios and explore the graphical designer.
+
+0. Download a sample LAMP template from the [repository](Ubuntu-LAMP-server-simple.yaml).
 
 1. In the AWS Management Console navigate to CloudFormation.
 
 2. Pretend that you want to create a new stack: Click on __Create stack__, then __With new resources (standard)__.
 
-    * __Prerequisite - Prepare template__: Select _Use a sample template_
-    * __Select a sample template__: _Simple > LAMP stack_
-    
-    To view the template in Composer click on __View in Infrastructure Composer__.
+    * __Prerequisite - Prepare template__: Select _Choose an existing template_
+    * __Specify template__: Upload a template file > Upload your .yaml file.
+
+    Do **not** click on "Next", but click on __View in Infrastructure Composer__ to view the template in Composer.
    
     Composer has several features displayed on three panes:
     
@@ -68,7 +73,7 @@ In this task you will explore ready-made templates developed by AWS for common s
 
 3. Hover over each node on the flow-of-information loop of the icons. Analyze which types of resources were used to create the necessary cloud architecture.
     
-   Experiment with adding or removing resources, and analyze how the code changes. You can also look at the other templates.
+   Experiment with adding or removing resources, and analyze how the code changes. You can also look at other [AWS cloudformation templates](https://github.com/aws-cloudformation/aws-cloudformation-templates) and this [EC2 LAMP Server](https://github.com/aws-samples/ec2-lamp-server) template.
    
 Deliverables: none
    
@@ -80,7 +85,10 @@ Prerequisites:
 
 * You need a [key pair](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-key-pairs.html).
 
-1. Choose __Create stack__, then __With new resources (standard)__ and select the sample template __Simple__ > __LAMP Stack__.
+    * __Prerequisite - Prepare template__: Select _Choose an existing template_
+    * __Specify template__: Upload a template file > Upload your .yaml file.
+
+1. Choose __Create stack__, then __With new resources (standard)__. In __Prerequisite - Prepare template__, Select _Choose an existing template_. In __Specify template__, choose _Upload a template file_ and upload your .yaml file.
 
     On the screen __Specify stack details__ provide these values:
 
@@ -95,7 +103,7 @@ Prerequisites:
     
     On the last screen, click on __Create change set__.
     
-2. The status of the stack should now be __REVIEW_IN_PROGRESS__. Examine the change set and verify that it conforms to your expectations. In a second window open the EC2 console and verify that no resources have been created yet. In the stack view under the __Change sets__ tab, click on __Execute change set__ and watch what happens in the EC2 console. The state of the stack should eventually become __CREATE_COMPLETE__.
+2. In the Events tab, the status of the stack should now be __REVIEW_IN_PROGRESS__. Examine the change set and verify that it conforms to your expectations. In a second window open the EC2 console and verify that no resources have been created yet. In the stack view under the __Change sets__ tab, click on __Execute change set__ and watch what happens in the EC2 console. The state of the stack should eventually become __CREATE_COMPLETE__.
 
    * What tags did CloudFormation add to the EC2 Instance? Which tag is used by CloudFormation to uniquely identify the resource?
    * How did CloudFormation name the Security Group and what tags did it add?
@@ -167,7 +175,7 @@ In this task you will use Terraform to provision AWS cloud resources.
           tags = {
             Name = "ExampleAppServerInstance"
             Course = "TSM-CloudSys"
-            Year = "2024"
+            Year = "2025"
             Lab = "Terraform"
             Group = "F" # Put your group letter here
           }
