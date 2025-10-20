@@ -99,11 +99,11 @@ Prerequisites:
     
     On the screen __Configure stack options__ provide these values:
     
-    * __Tags__: add a tag with key CloudFormationTest and value true
+    * __Tags__: add a tag with key `CloudFormationTest` and value `true`
     
     On the last screen, click on __Create change set__.
     
-2. In the Events tab, the status of the stack should now be __REVIEW_IN_PROGRESS__. Examine the change set and verify that it conforms to your expectations. In a second window open the EC2 console and verify that no resources have been created yet. In the stack view under the __Change sets__ tab, click on __Execute change set__ and watch what happens in the EC2 console. The state of the stack should eventually become __CREATE_COMPLETE__.
+2.The status of the stack should now be __CREATE_PENDING__. Examine the change set and verify that it conforms to your expectations. In a second window open the EC2 console and verify that no resources have been created yet. In the stack view under the __Change sets__ tab, click on __Execute change set__ and watch what happens in the EC2 console. The state of the stack should eventually become __CREATE_COMPLETE__.
 
    * What tags did CloudFormation add to the EC2 Instance? Which tag is used by CloudFormation to uniquely identify the resource?
    * How did CloudFormation name the Security Group and what tags did it add?

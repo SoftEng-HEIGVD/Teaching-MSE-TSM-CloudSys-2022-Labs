@@ -2,6 +2,20 @@ AWSTemplateFormatVersion: 2010-09-09
 Description: Simple LAMP Stack
 
 Parameters:
+  osVersion:
+    Type: String
+    Description: https://aws.amazon.com/ec2/graviton/ https://ubuntu.com/aws/pro
+    AllowedValues:
+      - Ubuntu2404arm64
+      - Ubuntu2404x8664
+      - Ubuntu2204arm64
+      - Ubuntu2204x8664
+      - UbuntuPro2404arm64
+      - UbuntuPro2404x8664
+      - UbuntuPro2204arm64
+      - UbuntuPro2204x8664
+    Default: Ubuntu2404x8664
+
   InstanceType:
     Type: String
     Default: t2.micro
@@ -50,6 +64,22 @@ Parameters:
     Default: 0.0.0.0/0
     Description: The IP address range that can SSH to the EC2 instance
 
+Mappings:
+  RegionMap:
+    us-east-1:
+      # Ubuntu 24.04 LTS
+      Ubuntu2404x8664: "ami-0360c520857e3138f"
+      Ubuntu2404arm64: "ami-026fccd88446aa0bf"
+      # Ubuntu 22.04 LTS
+      Ubuntu2204x8664: "ami-0bbdd8c17ed981ef9"
+      Ubuntu2204arm64: "ami-01b2110eef525172b"
+      # Ubuntu Pro 24.04 LTS
+      UbuntuPro2404x8664: "ami-0e8459476fed2e23b"
+      UbuntuPro2404arm64: "ami-06e880a88a1e3ebd9"
+      # Ubuntu Pro 22.04 LTS
+      UbuntuPro2204x8664: "ami-0c398cb65a93047f2"
+      UbuntuPro2204arm64: "ami-0f14ad9f1d341c53d"
+
 Resources:
   WebServerSecurityGroup:
     Type: AWS::EC2::SecurityGroup
@@ -73,7 +103,7 @@ Resources:
   WebServer:
     Type: AWS::EC2::Instance
     Properties:
-      ImageId: ami-0fc5d935ebf8bc3bc  # Ubuntu 22.04 LTS
+      ImageId: !FindInMap [RegionMap, !Ref "AWS::Region", !Ref osVersion]
       InstanceType: !Ref InstanceType
       KeyName: !Ref KeyName
       SubnetId: !Ref SubnetId
@@ -121,7 +151,19 @@ Outputs:
   ApacheTestPage:
     Description: Test PHP info page
     Value: !Sub "http://${WebServer.PublicIp}/info.php"
-  
+
+  DatabaseTestPage:
+    Description: Database connection test page
+    Value: !Sub "http://${WebServer.PublicIp}/dbtest.php"
+
   InstanceId:
     Description: The Instance ID of the LAMP server
     Value: !Ref WebServer
+
+  OSVersion:
+    Description: The selected OS version
+    Value: !Ref osVersion
+
+  AMIId:
+    Description: The AMI ID used for the instance
+    Value: !FindInMap [RegionMap, !Ref "AWS::Region", !Ref osVersion]
