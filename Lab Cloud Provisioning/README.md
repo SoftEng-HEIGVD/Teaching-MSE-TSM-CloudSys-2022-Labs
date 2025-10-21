@@ -157,7 +157,7 @@ In this task you will use Terraform to provision AWS cloud resources.
           required_providers {
             aws = {
               source  = "hashicorp/aws"
-              version = "~> 4.16"
+              version = "~> 5.0"
             }
           }
         
