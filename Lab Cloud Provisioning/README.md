@@ -58,16 +58,16 @@ In this task you will explore ready-made templates developed by AWS for common s
     * __Specify template__: Upload a template file > Upload your .yaml file.
 
     Do **not** click on "Next", but click on __View in Infrastructure Composer__ to view the template in Composer.
-   
+
     Composer has several features displayed on three panes:
-    
+
     * __Canvas__: Located on the central and largest pane, this is where your template resources display as a diagram. Changes that you make here automatically modify the template's code.
 
     * __Template__: Next to the Canvas button, this is the editor where you can edit your entire template by using JSON or YAML code.
-        
-    * __List__: Located on the left side of the page, this lists all the template resources that you can add to your template, categorized by the AWS service name. Add resources to the template by dragging them from this pane to the canvas.
 
-    * __Resources__: Next to the List tab, this lists all the currently added resources to the template.
+    * __List__: Located on the left side of the page, this lists all the currently added resources to the template.
+
+    * __Resources__: Next to the List tab, this lists all the template resources that you can add to your template, categorized by the AWS service name. Add resources to the template by dragging them from this pane to the canvas.
 
     * __Resources properties__: When you select an item in the canvas and click on *Details*, Composer opens the related code in a right pane. Here you can specify the details of your template, such as resource properties or template parameters. If you edit the code, you must save to update the diagram.
 
